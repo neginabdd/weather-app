@@ -1,17 +1,27 @@
 import React from "react";
 import axios from "axios";
+import "./Weather.css";
 
 export default function Weather() {
-  function display(response) {
-    alert(response.data.main.temp);
-  }
+  return(
+  <div className="Weather">
+    <h1>Tehran</h1>
+    <ul>
+      <li>
+        Monday 7:00
+      </li>
+    <li>
+      Mostly cloudly
+    </li>
+    </ul>
+    <div className="row">
+      <div className="grid-cols-6">
+        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"/>
+        34°C
+      </div>
 
-  const apiKey = "1dbf926d3b4417bf379db7043bec1047";
-  const units = "metric";
-  const city = "Paris";
-  const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(display);
-
+    </div>
+  </div>
+  );
   
 }
