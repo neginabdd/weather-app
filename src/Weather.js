@@ -3,23 +3,21 @@ import "./Weather.css";
 import axios from "axios";
 import Weatherinfo from "./Weatherinfo";
 
-
-
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-  const [city,setCity]=useState(props.default.city);
+  const [city,setCity]=useState(props.defaultCity);
 
   function handle(response) {
     console.log(response.data);
     setWeatherData({
       ready: true,
       data:new Date(response.data.time*1000),
-      temperature: response.data.temperature,
-      wind: response.data.speed, 
-      city: response.data.name,
-      humidity: response.data.humidity,
-      description: response.data.description, 
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+      temperature: response.data.temperature.current,
+      wind: response.data.wind.speed, 
+      city: response.data.city,
+      humidity: response.data.temperature.humidity,
+      description: response.data.condition.description, 
+      iconUrl: response.data.condition.icon_url
     });
   }
       function search(){

@@ -4,7 +4,7 @@ import Weather from "./Weather.js"
 function App() {
   return (
     <div className="App">
-   <Weather default="New York"/>
+   <Weather defaultCity="New York"/>
     </div>
   );
 }
