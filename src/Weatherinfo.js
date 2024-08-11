@@ -9,11 +9,11 @@ export default function Weatherinfo(props){
       <li>
         <FormateDate date={props.data.data}/>
       </li>
-      <li>Mostly cloudy</li>
+      <li>{props.data.description}</li>
     </ul>
     <div className="grid grid-cols-2 gap-4 mt-4">
       <div className="flex items-center">
-        <WeatherIcon iconUrl ={props.data.iconUrl}/>
+      <WeatherIcon iconUrl={props.data.icon} />
         {Math.round(props.data.temperature)}°C
       </div>
       <div>

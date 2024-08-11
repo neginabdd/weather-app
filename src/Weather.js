@@ -18,8 +18,9 @@ export default function Weather(props) {
       city: response.data.city,
       humidity: response.data.temperature.humidity,
       description: response.data.condition.description, 
-      //icon: response.data.weather[0].icon
+      icon: response.data.condition.icon
     });
+    
   }
       function search(){
         let apiKey = "49505e5b19424fcteac5488o13e08d43";
