@@ -15,10 +15,10 @@ export default function Weatherinfo(props){
     </ul>
     <div className="grid grid-cols-2 gap-4 mt-4">
       <div className="flex items-center">
-      <WeatherIcon code={props.data.icon}/>
-      
-      
+
+      <WeatherIcon code={props.data.iconUrl}/>
       <WeatherTemp celsius={props.data.temperature} />
+
       </div>
       <div>
         <ul className="list-disc pl-4">
