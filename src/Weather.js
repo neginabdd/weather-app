@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import "./Weather.css";
 import axios from "axios";
 import Weatherinfo from "./Weatherinfo";
-import weatherForecast from "./WeatheForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -37,13 +35,13 @@ export default function Weather(props) {
       }
   if (weatherData.ready) {
     return (
-      <div className="Weather border-2 rounded-md border-gray-300 p-4 m-3">
+      <div className="border-2 rounded-md border-gray-300 p-4">
         <form onSubmit={handleSubmit}>
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="input">
             </label>
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="drop-shadow-md border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               autoFocus="on"
               placeholder="Enter a city..."
