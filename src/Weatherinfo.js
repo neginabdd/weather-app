@@ -3,6 +3,7 @@ import FormateDate from "./FormateDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemp from "./WeatherTemp";
 
+
 export default function Weatherinfo(props){
     return(
     <div className="Weatherinfo">
@@ -16,7 +17,7 @@ export default function Weatherinfo(props){
     <div className="grid grid-cols-2 gap-4 mt-4">
       <div className="flex items-center">
 
-      <WeatherIcon code={props.data.iconUrl}/>
+      <WeatherIcon code={props.data.iconUrl} width={100} height={100} />
       <WeatherTemp celsius={props.data.temperature} />
 
       </div>
@@ -27,6 +28,7 @@ export default function Weatherinfo(props){
         </ul>
       </div>
       </div>
+
     </div>
     );
 }
