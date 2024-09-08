@@ -1,27 +1,33 @@
-import React,{useState} from "react";
+import React, { useState, useEffect } from "react";
 import WeatherIcon from "./WeatherIcon";
 import WeatherForcastDay from "./WeatherForecastDay";
 import axios from "axios";
 
 export default function WeatherForecast(props) {
-  let [loaded,setLoaded]=useState(false);
-  let[forecast,setForecaste]=useState(null);
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(null); // fixed typo: setForecaste -> setForecast
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]); //array of vars
 
   function handleResponse(response) {
-    setForecaste(response.data.daily);
+    setForecast(response.data.daily);
     setLoaded(true);
   }
-  if(loaded){
+
+  if (loaded) {
     console.log(forecast);
     return (
-      <div>
-        <div className="grid grid-rows-[auto auto auto] gap-2 mb-5">
-          <WeatherForcastDay data={forecast[0]}/>
-        </div>
+      <div className="grid grid-cols-6 gap-4 mb-5">
+        {forecast.slice(0, 6).map((dailyForecast, index) => (
+          <div key={index}>
+            <WeatherForcastDay data={dailyForecast} />
+          </div>
+        ))}
       </div>
     );
-  }
-  else{
+  } else {
     const apiKey = "49505e5b19424fcteac5488o13e08d43";
     let lon = props.coordinates.longitude;
     let lat = props.coordinates.latitude;
@@ -29,6 +35,4 @@ export default function WeatherForecast(props) {
     axios.get(apiUrl).then(handleResponse);
     return null;
   }
-
- 
 }
