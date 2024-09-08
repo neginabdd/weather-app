@@ -37,7 +37,9 @@ export default function Weather(props) {
       }
   if (weatherData.ready) {
     return (
-      <div className="border-2 rounded-md border-gray-300 p-4">
+      <div
+  className="border-2 rounded-md border-gray-300 p-4 backdrop-filter backdrop-blur-sm">
+  
         <form onSubmit={handleSubmit}>
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="input">
