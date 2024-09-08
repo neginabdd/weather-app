@@ -24,7 +24,7 @@ function App() {
           </a>{" "}
           and{" "}
           <a
-            href="https://suspicious-beaver-111c4d.netlify.com/"
+            href="https://weather-app-hwnj.onrender.com/"
             target="_blank"
             rel="noopener noreferrer"
           >

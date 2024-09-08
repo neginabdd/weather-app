@@ -38,13 +38,13 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div
-  className="border-2 rounded-md border-purple-950 p-4 backdrop-filter backdrop-blur-md ">
+  className="border-2 rounded-md border-blue-800 p-4 backdrop-filter backdrop-blur-md ">
         <form onSubmit={handleSubmit}>
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="input">
             </label>
             <input
-              class="drop-shadow-md bg-purple-100 border-purple-950 border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="drop-shadow-md bg-blue-100 border-blue-800 border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               autoFocus="on"
               placeholder="Enter a city..."
@@ -52,7 +52,7 @@ export default function Weather(props) {
             />
           </div>
           <div class="flex items-center justify-between">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            <button class="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Submit
             </button>
           </div>
